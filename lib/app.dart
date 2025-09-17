@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
+import 'package:flutter_application_1/pages/perfil_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(1, 226, 185, 0),
         ),
       ),
-      home: const MyHomePage(title: 'tela 1'),
+      home: const MyHomePage(title: '1',),
     );
   }
 }

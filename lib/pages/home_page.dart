@@ -28,26 +28,28 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+
+              Icon(Icons.account_circle, size: 100, color: Color.fromARGB(255, 117, 90, 0)),
               
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
 
               const Text(
                 "El dolado",
                 style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 26,
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(255, 255, 187, 0),
                 ),
               ),
 
-              const SizedBox(height: 20,),
+              const SizedBox(height: 30,),
 
                const Text(
-                "Bem vindo",
+                "Bem vindo!",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 105, 77, 0),
+                  color: Color.fromARGB(255, 119, 87, 0),
                 ),
               ),
               const SizedBox(height: 40),
@@ -55,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               TextField(
                 controller: controllerLogin,
                 decoration: const InputDecoration(
-                  labelText: "Email",
+                  labelText: "Gmail",
                   enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Color.fromARGB(255, 255, 196, 0))),
                   focusedBorder: OutlineInputBorder(
@@ -67,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 controller: controllerSenha,
                 obscureText: true,
                 decoration: const InputDecoration(
-                  labelText: "Password",
+                  labelText: "Senha",
                   enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Color.fromARGB(255, 255, 196, 0))),
                   focusedBorder: OutlineInputBorder(
@@ -80,14 +82,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: TextButton(
                   onPressed: () {},
                   child: const Text(
-                    "Forgot Password?",
+                    "Esqueceu sua senha?",
                     style: TextStyle(color: Colors.grey),
                   ),
                 ),
               ),
               const SizedBox(height: 20),
               SizedBox(
-                width: double.infinity,
+                width: 200,
                 height: 50,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -100,9 +102,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     print(controllerLogin.text);
                     print(controllerSenha.text);
                   },
-                  child: const Text(
-                    "LOGIN",
-                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.login),
+                      SizedBox(width: 10,),
+                      Text("Login", 
+                      style:
+                      TextStyle(fontSize: 20, color: const Color.fromARGB(255, 255, 255, 255)),
+                      
+                      ),
+
+                    ],
                   ),
                 ),
               ),

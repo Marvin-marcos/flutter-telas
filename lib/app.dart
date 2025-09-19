@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:flutter_application_1/pages/perfil_page.dart';
+import 'package:flutter_application_1/pages/Projeto_page.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required String title});
 
   // This widget is the root of your application.
   @override
@@ -21,7 +22,9 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(1, 226, 185, 0),
         ),
       ),
-      home: const MyHomePage(title: '1',),
+      //home: const PerfilPage('perfil-page',),
+      //home: const MyHomePage('Myhome_page',),
+       home: const ProjetosPage('Projeto-page',),
     );
   }
 }

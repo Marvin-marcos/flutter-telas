@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/home_page.dart';
 
 class PerfilPage extends StatefulWidget {
   const PerfilPage(String s, {super.key});
@@ -94,7 +95,13 @@ class _PerfilPageState extends State<PerfilPage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => const MyHomePage(title: 'Myhome_page')),
+                        (Route<dynamic> route) => false,
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 97, 79, 0),
                       padding: const EdgeInsets.symmetric(

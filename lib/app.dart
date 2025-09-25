@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //home: const PerfilPage('perfil-page',),
-      //home: const MyHomePage('Myhome_page',),
-       home: const ProjetosPage('Projeto-page',),
+      home: const MyHomePage(title: '',),
+      //  home: const ProjetosPage('Projeto-page',),
     );
   }
 }

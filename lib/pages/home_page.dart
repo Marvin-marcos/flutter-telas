@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/Projeto_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -28,9 +29,12 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Icon(
+                Icons.account_circle,
+                size: 100,
+                color: Color.fromARGB(255, 117, 90, 0),
+              ),
 
-              Icon(Icons.account_circle, size: 100, color: Color.fromARGB(255, 117, 90, 0)),
-              
               const SizedBox(height: 20),
 
               const Text(
@@ -42,9 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
-              const SizedBox(height: 30,),
+              const SizedBox(height: 30),
 
-               const Text(
+              const Text(
                 "Bem vindo!",
                 style: TextStyle(
                   fontSize: 18,
@@ -59,9 +63,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: const InputDecoration(
                   labelText: "Gmail",
                   enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color.fromARGB(255, 255, 196, 0))),
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 255, 196, 0),
+                    ),
+                  ),
                   focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color.fromARGB(255, 184, 141, 0))),
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 184, 141, 0),
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 20),
@@ -71,9 +81,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: const InputDecoration(
                   labelText: "Senha",
                   enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color.fromARGB(255, 255, 196, 0))),
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 255, 196, 0),
+                    ),
+                  ),
                   focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color.fromARGB(255, 184, 141, 0))),
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 184, 141, 0),
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 10),
@@ -99,20 +115,26 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   onPressed: () {
-                    print(controllerLogin.text);
-                    print(controllerSenha.text);
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            const ProjetosPage('Projetos-page'),
+                      ),
+                    );
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.login),
-                      SizedBox(width: 10,),
-                      Text("Login", 
-                      style:
-                      TextStyle(fontSize: 20, color: const Color.fromARGB(255, 255, 255, 255)),
-                      
+                      SizedBox(width: 10),
+                      Text(
+                        "Login",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: const Color.fromARGB(255, 255, 255, 255),
+                        ),
                       ),
-
                     ],
                   ),
                 ),

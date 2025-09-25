@@ -3,6 +3,8 @@ import 'package:flutter_application_1/Config/app.colors.dart';
 import 'package:flutter_application_1/Config/app_text_style.dart';
 import 'package:flutter_application_1/Controllers/project_crotroller.dart';
 import 'package:flutter_application_1/Widgets/project_cart.dart';
+import 'package:flutter_application_1/pages/perfil_page.dart';
+
 
 class ProjetosPage extends StatefulWidget {
   final String title;
@@ -17,33 +19,44 @@ class _ProjetosPageState extends State<ProjetosPage> {
 
   @override
   Widget build(BuildContext context) {
-  return Scaffold(
-    backgroundColor: const Color.fromARGB(255, 218, 218, 218),
-    
-    appBar: AppBar(
-      title: Text(
-        "Meus Projetos",
-        style: AppTextStyle.title,
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 218, 218, 218),
+
+      appBar: AppBar(
+        title: Text("Meus Projetos", style: AppTextStyle.title),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.person),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PerfilPage('perfil-page'),
+                ),
+              );
+            },
+          ),
+        ],
       ),
-    ),
-    body: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Efeito borboleta",style: AppTextStyle.subtitle,),
+
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Efeito borboleta", style: AppTextStyle.subtitle),
             ...projectCrotroller.listaCards.map((card) {
               return ProjectCards(
                 iconCard: card["icon"],
                 tituloCard: card["titulo"],
                 descricaoCard: card["descricao"],
-                titulobotao: card["botao"], funcao: () {  },
+                titulobotao: card["botao"],
+                funcao: () {},
               );
             }),
-        ],
+          ],
+        ),
       ),
-    ),
-  );
+    );
   }
-}    
+}
